@@ -11,6 +11,7 @@ Abaixo segue o código de exemplo:
 ```ruby
 require 'CNovaApiLojistaV2'
 require 'CNovaApiLojistaV2/client'
+require 'date'
 
 CNovaApiLojistaV2::Client.configure do |config|
   config.scheme                  = "http"
@@ -446,7 +447,7 @@ rescue => e
 end
 ```
 
-Consulta todos os tickets com status "Aberto":
+Consulta ticket com status "Aberto":
 
 ```ruby
 begin
