@@ -13,9 +13,9 @@ module CNovaApiLojistaV2
 	    # @param _offset Parâmetro utilizado para indicar a posição inicial de consulta. 
 	    # @param _limit Parâmetro utilizado para limitar a quantidade de registros trazidos pela consulta. 
 	    # @param [Hash] opts the optional parameters
-	    # @option opts [string] :status Utilizado para filtrar os tickets com um status específico. Aberto (opened), Atrasado (delayed), Critico (critical), Em Acompanhamento (attendance), Fechado (closed), Todos (all).
-	    # @option opts [string] :code Código do protocolo. .
-	    # @option opts [string] :customer_name Nome do comprador (ou parte dele). .
+	    # @option opts [string] :status Utilizado para filtrar os tickets com um status específico. Aberto (opened), Em Monitoramento (attendance), Fechado (closed).
+	    # @option opts [string] :code Código do protocolo.
+	    # @option opts [string] :customer_name Nome do comprador (ou parte dele).
 	    # @option opts [string] :created_at Utilizado para filtrar tickets pela data de criação. É possível passar uma variação de datas separadas por &#39;,&#39;. Ex: 2014-12-15T11:00:00.000-02:00,*.
 	    # @option opts [string] :closed_at Utilizado para filtrar tickets pela data de fechamento. É possível passar uma variação de datas separada &#39;,&#39;. Ex: 2014-12-15T11:00:00.000-02:00,2014-12-15T23:00:00.00-02:00. É possível também utilizar o caractere &#39;*&#39; para não limitar alguma posição. Ex: 2014-12-14T00:00.000-02:00,*.
 	    # @return [Tickets]
@@ -273,7 +273,7 @@ module CNovaApiLojistaV2
 	
 	
 	    # Operação utilizada para atualizar o status dos tickets
-	    # &lt;p&gt;Esse serviço permitirá que o lojista/plataforma altere o status de um Ticket. Os status permitidos serão: Fechado &lt;strong&gt; (closed) &lt;/strong&gt; e Em Monitoramento &lt;strong&gt; (attendance).&lt;/strong&gt;&lt;/p&gt;
+	    # &lt;p&gt;Esse serviço permitirá que o lojista/plataforma altere o status de um Ticket. Os status permitidos serão: Fechado &lt;strong&gt; (closed) &lt;/strong&gt; e Em Acompanhamento &lt;strong&gt; (attendance).&lt;/strong&gt;&lt;/p&gt;
 	    # @param code Código do protocólo.
 	    # @param body Parâmetros para ativação/desativação massiva de produtos
 	    # @param [Hash] opts the optional parameters

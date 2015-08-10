@@ -334,7 +334,7 @@ module CNovaApiLojistaV2
 	    # @option opts [string] :purchased_at Data de compra. Esse campo aceita um range de datas separados por vírgula, e os formatos aceitos para o campo são os seguintes:&lt;br/&gt;&lt;strong&gt;purchasedAt={data inicial},{data final}&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;purchasedAt={data inicial},*&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;purchasedAt=*,{data final}&lt;/strong&gt;&lt;br/&gt;onde, o &lt;strong&gt;*&lt;/strong&gt; é obrigatório e indica a que todas as datas antes ou depois da outra data passada devem ser consideradas.
 	    # @option opts [string] :customer_name Nome do Cliente.
 	    # @option opts [string] :customer_document_number Documento do Cliente.
-	    # @return [GetOrdersResponse]
+	    # @return [GetOrdersStatusNewResponse]
 	    def self.get_orders_by_status_new(_offset, _limit, opts = {})
 	      
 	      # verify the required parameter '_offset' is set
@@ -376,7 +376,7 @@ module CNovaApiLojistaV2
 	      auth_names = ['client_id', 'access_token']
 	      response = Client::Request.new(:GET, path, {:params => query_params, :headers => header_params, :form_params => form_params, :body => post_body, :auth_names => auth_names}).make.body
 	      if response.is_a?(Hash)
-	     	obj = Model::GetOrdersResponse.new() and obj.build_from_hash(response)
+	     	obj = Model::GetOrdersStatusNewResponse.new() and obj.build_from_hash(response)
 	      else
 		    obj = response;
 	      end

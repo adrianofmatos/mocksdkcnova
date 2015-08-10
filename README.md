@@ -14,7 +14,7 @@ require 'CNovaApiLojistaV2/client'
 require 'date'
 
 CNovaApiLojistaV2::Client.configure do |config|
-  config.scheme                  = "http"
+  config.scheme                  = "https"
   config.host                    = "sandbox.cnova.com"
   config.base_path               = "/api/v2/"
   # Alterar a chave informada com o valor de client_id disponível para sua APP
@@ -345,8 +345,8 @@ begin
 
   purchased_at = self.format_date_range(nil, DateTime.now);
 
-  get_orders_response =  CNovaApiLojistaV2::Api::OrdersApi.get_orders_by_status_new(0, 100, {:purchased_at => purchased_at});
-  puts get_orders_response.inspect;
+  get_orders_status_new_response =  CNovaApiLojistaV2::Api::OrdersApi.get_orders_by_status_new(0, 100, {:purchased_at => purchased_at});
+  puts get_orders_status_new_response.inspect;
 
 rescue => e
   puts e.inspect;
@@ -452,7 +452,7 @@ Consulta ticket com status "Aberto":
 ```ruby
 begin
 
-  tickets = CNovaApiLojistaV2::Api::TicketsApi.get_tickets(0, 5, {:status => 'Aberto', :code => '123123'});
+  tickets = CNovaApiLojistaV2::Api::TicketsApi.get_tickets(0, 5, {:status => 'opened', :code => '439211092852'});
   puts tickets.inspect;
 
 rescue => e

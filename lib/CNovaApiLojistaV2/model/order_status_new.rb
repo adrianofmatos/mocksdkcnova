@@ -1,8 +1,8 @@
 module CNovaApiLojistaV2
   module Model
 	  # 
-	  class Order < BaseObject
-	    attr_accessor :id, :order_site_id, :site, :payment_type, :purchased_at, :approved_at, :updated_at, :status, :total_amount, :total_discount_amount, :billing, :customer, :freight, :items, :shipping, :trackings, :seller
+	  class OrderStatusNew < BaseObject
+	    attr_accessor :id, :order_site_id, :site, :payment_type, :purchased_at, :approved_at, :updated_at, :status, :total_amount, :total_discount_amount, :billing, :customer, :freight, :items, :trackings, :seller
 	    # attribute mapping from ruby-style variable name to JSON key
 	    def self.attribute_map
 	      {
@@ -49,9 +49,6 @@ module CNovaApiLojistaV2
 	        # Lista de itens do pedido
 	        :'items' => :'items',
 	        
-	        # Informações de envio do pedido.
-	        :'shipping' => :'shipping',
-	        
 	        # Informações de tracking do pedido
 	        :'trackings' => :'trackings',
 	        
@@ -78,7 +75,6 @@ module CNovaApiLojistaV2
 	        :'customer' => :'Customer',
 	        :'freight' => :'Freight',
 	        :'items' => :'array[OrderItem]',
-	        :'shipping' => :'ShippingAddress',
 	        :'trackings' => :'array[Tracking]',
 	        :'seller' => :'Seller'
 	        
@@ -148,10 +144,6 @@ module CNovaApiLojistaV2
 	        if (value = attributes[:'items']).is_a?(Array)
 	          @items = value
 	        end
-	      end
-	      
-	      if attributes[:'shipping']
-	        @shipping = attributes[:'shipping']
 	      end
 	      
 	      if attributes[:'trackings']

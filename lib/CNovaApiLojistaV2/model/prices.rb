@@ -13,7 +13,7 @@ module CNovaApiLojistaV2
 	        # Preço real de venda. Preço por do produto no Marketplace
 	        :'offer' => :'offer',
 	        
-	        # Site no qual o produto ficará ou não disponível. Os possíveis sites são: &#39;EX&#39;, &#39;PF&#39;, &#39;CB&#39;, &#39;EH&#39;, &#39;BT&#39;, &#39;CD&#39;. Consulte a lista completa de sites disponíveis no serviço &lt;a href=&#39;#!/sites&#39; target=&#39;_blank&#39;&gt;&lt;strong&gt;GET /sites&lt;/strong&gt;&lt;/a&gt;
+	        # Site no qual o preço será aplicado. Os possíveis sites são: &#39;EX&#39;, &#39;PF&#39;, &#39;CB&#39;, &#39;EH&#39;, &#39;BT&#39;, &#39;CD&#39;. Caso nenhum valor seja informado, será assumido o valor &#39;EX&#39; como padrão. Consulte a lista completa de sites disponíveis no serviço &lt;a href=&#39;#!/sites&#39; target=&#39;_blank&#39;&gt;&lt;strong&gt;GET /sites&lt;/strong&gt;&lt;/a&gt;
 	        :'site' => :'site'
 	        
 	      }
