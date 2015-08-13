@@ -2,6 +2,8 @@
 
 Provê os componentes Ruby para uso da API V2 de lojistas, disponibilizada pela CNova.
 
+![Vantagens na utilização de SDKs](http://cnovaportaldev.sensedia.com/api-portal/sites/default/files/images/sdk_dev.png)
+
 ## Criando um API Client
 
 Antes de utilizar as APIs, é necessário a criação de um client com as configurações de _base path_ e também as credenciais para acesso.
